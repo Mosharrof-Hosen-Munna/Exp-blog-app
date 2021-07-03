@@ -1,0 +1,55 @@
+<%- include('../../partials/header.ejs') %>
+
+    <div>
+        <div class="container my-container my-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card bg-dark text-light card-body">
+                        <h4 class="my-3 text-center">Login your Account</h4>
+                        <% if (errorMessage.msg) { %>
+                            <div>
+                                <p class="lead text-danger text-center">
+                                    <%= errorMessage.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <form action="/auth/login" method="POST">
+                                    <div class="form-group my-3">
+                                        <label for="email">Enter your Email</label>
+                                        <input type="email" value="<%=value.email?value.email:''%>" name="email"
+                                            id="email" class="form-control" placeholder="">
+                                        <div class="form-group my-3">
+                                            <label for="password">Enter Your Password</label>
+                                            <input type="password" value="<%=value.password?value.password:''%>"
+                                                name="password" id="password" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="row ">
+                                            <div class=" col-12 m-auto  col-md-12  text-center">
+                                                <button class="btn col btn-primary col-12 col-md-6 my-3" type="submit"
+                                                    value="login">Login</button>
+                                            </div>
+                                        </div>
+                                </form>
+                                <div class="text-center">
+                                    <a href="/auth/signup" class="lead text-center my-2"
+                                        style="font-size: 14px !important;">Don't Have Any Account? Create Here</a>
+                                </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+
+        </body>
+
+        </html>
